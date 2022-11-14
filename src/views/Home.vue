@@ -1,18 +1,39 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+ <div>
+    <Loading v-if="isLoading"/>
+    <Banner/>
+ </div> 
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
-export default {
-  name: "Home",
+  import { ref } from 'vue'
+  import Loading from '../components/LoadingSection.vue'
+  import Banner from '../components/Banner.vue'
+  import { onMounted } from 'vue'
+  export default {
   components: {
-    HelloWorld,
+    Loading,
+    Banner
   },
-};
+  setup() {
+    const isLoading = ref(true)
+    const timer = ref(null)
+
+    onMounted(() => {
+      isLoading.value ? setTimeOut() : null
+    })
+    const setTimeOut = () => {
+      if(isLoading.value){
+        const timeout = setTimeout(()=>{
+          isLoading.value = false
+        }, 2000)
+        clearTimeout(timeout.value)
+      }
+      return{
+        isLoading,
+        timer,
+        setTimeOut
+      }
+    }
+  }
+  }
 </script>

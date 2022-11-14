@@ -1,24 +1,13 @@
-# thef2e
+Week 1 - The F2E 活動網站設計
 
-## Project setup
-```
-npm install
-```
+設計稿
+採用設計稿連結 :https://2022.thef2e.com/users/12061549261446456235
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+使用技術
+1.Vue cli
+2.Router
+3.Javascript
 
-### Compiles and minifies for production
-```
-npm run build
-```
+使用第三方套件
+1.GSAP
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
